@@ -19,7 +19,7 @@ function App() {
     if (!trimmedName) return;
 
     try {
-      await axios.post("https://threew1.onrender.com/users", { name: trimmedName });
+      await axios.post('https://threew1.onrender.com/users', { name: trimmedName });
       setNewName("");
       fetchUsers();
     } catch (err) {
