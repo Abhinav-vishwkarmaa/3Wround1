@@ -7,7 +7,7 @@ function App() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("https://threewround1-3.onrender.com//users");
+      const res = await axios.get("https://threewround1-3.onrender.com/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Failed to fetch users:", err);
@@ -19,7 +19,7 @@ function App() {
     if (!trimmedName) return;
 
     try {
-      await axios.post('https://threewround1-3.onrender.com//users', { name: trimmedName });
+      await axios.post('https://threewround1-3.onrender.com/users', { name: trimmedName });
       setNewName("");
       fetchUsers();
     } catch (err) {
@@ -29,7 +29,7 @@ function App() {
 
   const claimPoints = async (userId) => {
     try {
-      await axios.post(`https://threewround1-3.onrender.com//claim/${userId}`);
+      await axios.post(`https://threewround1-3.onrender.com/claim/${userId}`);
       fetchUsers();
     } catch (err) {
       console.error("Failed to claim points:", err);
@@ -38,7 +38,7 @@ function App() {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`https://threewround1-3.onrender.com//users/${userId}`);
+      await axios.delete(`https://threewround1-3.onrender.com/users/${userId}`);
       fetchUsers();
     } catch (err) {
       console.error("Failed to delete user:", err);
