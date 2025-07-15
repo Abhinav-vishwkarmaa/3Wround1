@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
-    const interval = setInterval(fetchUsers, 5000); // Auto refresh every 5 seconds
+    const interval = setInterval(fetchUsers, 1000); // Auto refresh every 5 seconds
     return () => clearInterval(interval);
   }, []);
 
